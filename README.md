@@ -52,5 +52,3 @@ After a deep dive into the numbers, here is what stands out:
 Data Analyst | Turning messy data into strategic business decisions.  
 Email: [davidsebastianartt@gmail.com](mailto:davidsebastianartt@gmail.com)  
 LinkedIn: [linkedin.com/in/david-sartt](https://www.linkedin.com/in/david-sartt/)
-```
-Just remember to swap out the `[Insert Link Here]` placeholders with your actual dataset and Tableau links before committing it to GitHub. How does this narrative flow feel to you?
