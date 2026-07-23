@@ -4,7 +4,7 @@ Scaling a global e-commerce business is tough. You have to balance aggressive ma
 
 This project is a **Commercial Supply Chain Audit** aimed at doing three things: establishing the true on-time delivery failure rate, identifying the root causes of logistics bottlenecks (such as priority routing and promotional surges), and quantifying the financial impact on Customer Care resources. The end goal is to equip executive management with a data-driven blueprint to recover operational efficiency and restore profitability.
 
-The dataset was obtained from: [**Dataset Source (https://www.kaggle.com/datasets/prachi13/customer-analytics/data)**]
+The dataset was obtained from Kaggle: [**Dataset Source**](https://www.kaggle.com/datasets/prachi13/customer-analytics/data)
 
 ### The Business Questions
 
