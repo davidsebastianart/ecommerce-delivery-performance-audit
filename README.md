@@ -18,10 +18,13 @@ This audit is driven by four core questions critical to the company's operationa
 
 Transforming messy logistics data into a clear operational narrative requires a solid pipeline. Here is how I approached the workflow:
 
-1. **Data Cleaning & Validation (SQL):** I used Google BigQuery to sanitize 10,999 raw transaction records. I handled schema parsing errors, validated missing values, and filtered out duplicate IDs to ensure structural integrity before analysis.
-2. **Metric Engineering:** To make the data actionable, I engineered custom commercial metrics using SQL `CASE WHEN` logic. I categorized granular discount percentages into strategic tiers (*Low, Medium, High*) and created binary classifications for delivery status.
-3. **Categorical Transformation:** I converted numerical customer care call volumes into structured categorical dimensions. This allowed me to directly map the overlap between delayed packages and support ticket spikes.
-4. **Interactive Dashboarding:** I designed an *Executive Dashboard* in Tableau Public. By implementing a clean layout and strict visual hierarchy, I made it easy for stakeholders to pinpoint exactly where the supply chain is bleeding resources.
+1. **Data Cleaning & Validation (SQL):** I used Google BigQuery to sanitize 10,999 raw transaction records. I handled schema parsing errors, checked for numerical outliers, validated missing values, and filtered out duplicate IDs to ensure structural integrity before analysis.
+2. **Metric Engineering (BigQuery SQL):** To make the data actionable, I engineered custom commercial parameters using SQL `CASE WHEN` logic, creating binary classifications for delivery status (`Is_Late`) and calculating preliminary aggregate metrics to assess SLA compliance.
+3. **Feature Engineering & Calculated Fields (Tableau):** To transform raw dimensions into interactive business metrics directly within Tableau Public, I created custom **Calculated Fields**:
+   * **`[Late Rate %]`**: Evaluated the percentage of SLA failures by aggregating total late deliveries against total shipment volume (`SUM([Is_Late]) / COUNT([ID])`).
+   * **`[Discount Tier]`**: Binned raw discount percentages into strategic business groups (`Low (0-10%)`, `Medium (11-30%)`, `High (>30%)`) using conditional logic to isolate promotional stress on fulfillment.
+   * **Custom Categorical Labeling**: Applied calculated fields for clear categorical labeling (e.g., converting binary flags into executive-friendly `Late` vs. `On-Time` tags) to maximize visual clarity on the dashboard.
+4. **Interactive Dashboarding:** I designed an *Executive Dashboard* in Tableau Public. By implementing a clean layout and strict visual hierarchy, I made it easy for stakeholders to isolate operational bottlenecks and map the direct impact of late deliveries on Customer Care call volume.
 
 ### What the Data Says (The Findings)
 
